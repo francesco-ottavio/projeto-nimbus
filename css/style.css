@@ -1,0 +1,12 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.navbar-brand img{
+    width: 250px;
+}
+
+section{
+    min-height: 100vh;
+    padding: 100px 0;
+}
