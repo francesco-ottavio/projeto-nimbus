@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html">
                 <img src="photos/logo/nimbus-logo.png" alt="photo-logo">
             </a>

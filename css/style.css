@@ -14,3 +14,25 @@ section{
 .carrossel-img{
     height: 80vh;
 }
+
+.ilustra-servico{
+    max-width: 100%;
+    width: 350px;
+    margin: 0 auto;
+}
+
+table img{
+    max-width: 100%;
+    width: 80px;
+    margin: 0 auto;
+}
+
+table tr td:last-child{
+    width: 200px;
+}
+
+.img-criar-servico{
+    max-width: 100%;
+    width: 400px;
+    margin: 0 auto;
+}
