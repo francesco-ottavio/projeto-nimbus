@@ -1,4 +1,12 @@
-<?php require_once('header.php'); ?>
+<?php require_once('header.php');
+
+if(!isset($_SESSION['logado'])){
+    header('Location: login.php');
+}
+
+
+
+?>
 
 <main>
     <div class="container my-5">
