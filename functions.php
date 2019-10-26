@@ -34,23 +34,23 @@
 // ];
 
 
-function listarServicos()
-{
+// function listarServicos()
+// {
 
-    global $servicos;
+//     global $servicos;
 
-    foreach ($servicos as $index => $servico) {
+//     foreach ($servicos as $index => $servico) {
 
-        echo "<div class='col-md-4'>
-        <div class='card'>
-            <img class='card-img-top' src=$servico[imagem] alt='destaque-1'>
-            <div class='card-body'>
-                <p class='card-text text-center'><a href='servico.php?id=$index'>$servico[nome]</a></p>
-            </div>
-        </div>
-    </div>";
-    }
-}
+//         echo "<div class='col-md-4'>
+//         <div class='card'>
+//             <img class='card-img-top' src=$servico[imagem] alt='destaque-1'>
+//             <div class='card-body'>
+//                 <p class='card-text text-center'><a href='servico.php?id=$index'>$servico[nome]</a></p>
+//             </div>
+//         </div>
+//     </div>";
+//     }
+// }
 
 function getNome($id)
 {
@@ -101,8 +101,26 @@ if (isset($_POST['cadastrar_servico'])) {
         $arquivo = fopen($arquivoServicos, 'w'); //abre ou cria o arquivo
         $arrayServicos = ["servicos" => []]; // cria array pra guardar serviços
         $infoServico = $_POST; // pega informações do formulário de cadastro
+        $infoServico['imagem'] = $imagemServico;
         $arrayServicos["servicos"][] = $infoServico; //adiciona o novo serviço na
         $jsonServicos = json_encode($arrayServicos, true); // converte array em json
         file_put_contents($arquivoServicos, $jsonServicos); //adiciona info no arquivo
     }
 }
+
+
+function listarServicos(){
+    //trazer infos do jason
+    $arquivoJson = 'servicos.json';
+    $servicos = [];
+    if(file_exists($arquivoJson)){
+        $jsonServicos = file_get_contents($arquivoJson); //conteudo do arquivo
+        $arrayServicos = json_decode($jsonServicos, true); //json para array
+
+        $servicos = $arrayServicos['servicos'];
+    }
+    return $servicos;
+}
+
+// echo "<pre>";
+// var_dump(listarServicos());

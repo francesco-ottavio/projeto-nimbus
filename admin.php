@@ -22,15 +22,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td> Consultoria UX</td>
-                                <td>aqui vem a descrição</td>
-                                <td> <img src="photos/undraw_conversation_h12g.svg" class="ilustra-admin" alt="ilustra"> </td>
-                                <td>
-                                    <a href="#" class="btn btn-info">Editar</a>
-                                    <a href="#" class="btn btn-danger">Excluir</a>
-                                </td>
-                            </tr>
+                            <?php
+                                $servicos = listarServicos();
+                                if(count($servicos) > 0){
+                                    foreach ($servicos as $indice => $valor) {
+                                        // var_dump($servicos[$indice]);
+                                        echo "<tr>
+                                        <td>" . $servicos[$indice]["nome"] . "</td>
+                                        <td>" . $servicos[$indice]["descricao"] . "</td>
+                                        <td> <img src='" . $servicos[$indice]["imagem"] . "' class='ilustra-admin' alt='ilustra'> </td>
+                                        <td>
+                                            <a href='#' class='btn btn-info'>Editar</a>
+                                            <a href='#' class='btn btn-danger'>Excluir</a>
+                                        </td>
+                                    </tr>";
+                                    }
+                                }
+
+                            ?>
+                            
                         </tbody>
                     </table>                    
                 </div>
